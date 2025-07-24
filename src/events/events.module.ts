@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { EventBusService } from './event-bus/event-bus.service';
 
 @Module({
-  providers: [EventBusService]
+  providers: [EventBusService],
+  exports: [EventBusService]
 })
-export class SharedModule {}
+export class EventsModule {}

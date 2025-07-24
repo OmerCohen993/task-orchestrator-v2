@@ -1,13 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { OrchestratorModule } from './orchestrator/orchestrator.module';
-import { TaskModule } from './task/task.module';
-import { SharedModule } from './shared/shared.module';
+import { TaskModule } from './tasks/task.module';
+import { ApiModule } from './api/api.module';
+import { EventsModule } from './events/events.module';
+
 
 @Module({
-  imports: [OrchestratorModule, TaskModule, SharedModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    OrchestratorModule,
+    TaskModule,
+    ApiModule,
+    EventsModule
+  ],
 })
-export class AppModule {}
+export class AppModule { }
